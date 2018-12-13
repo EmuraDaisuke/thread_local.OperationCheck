@@ -1,6 +1,6 @@
 # thread_local.OperationCheck
 
-thread_localの動作確認
+thread_local変数の生成/破棄の動作確認
 
 ||Construct|Destruct|
 |-|:-:|:-:|
