@@ -1,6 +1,6 @@
 # thread_local.OperationCheck
 
-thread_local変数(class)の生成/破棄の動作確認
+thread_local変数(非POD)の生成/破棄の動作確認
 
 ## Windows10
 ||Construct|Destruct|
