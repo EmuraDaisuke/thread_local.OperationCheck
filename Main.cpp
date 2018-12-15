@@ -1,9 +1,13 @@
 
 
 
-#include    <cstdio>
-#include    <vector>
-#include    <thread>
+#include <cstdio>
+#include <vector>
+#include <thread>
+
+
+
+#define DESTRUCT    0
 
 
 
@@ -12,9 +16,10 @@ struct Test {
     {
         std::printf("~Test %p\n", this); fflush(stdout);
         
-        // "Msvc" will stop. That is correct.
-        // "g++" does not stop. That is dangerous.
+        #if DESTRUCT//[
+        // "gcc version 8.2.0 (Rev3, Built by MSYS2 project)" does not stop. That is dangerous.
         *static_cast<int*>(nullptr) = 0;
+        #endif//]
     }
     
     Test()
@@ -37,5 +42,6 @@ int main(int argc, char* argv[])
     std::vector<std::thread> at(std::thread::hardware_concurrency());
     for (auto& t : at) t = std::thread([]{ v.Func(); });
     for (auto& t : at) t.join();
+    std::printf("*******\n"); fflush(stdout);
     return 0;
 }
