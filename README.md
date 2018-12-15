@@ -5,7 +5,7 @@ thread_local変数(class)の生成/破棄の動作確認
 ## Windows10
 ||Construct|Destruct|
 |-|:-:|:-:|
-|Microsoft(R) C/C++ Optimizing Compiler Version 19.16.27025.1 for x64|スレッド生成時|スレッド消滅時|
+|Microsoft(R) C/C++ Version 19.16.27025.1 for x64|スレッド生成時|スレッド消滅時|
 |clang version 7.0.0 (tags/RELEASE_700/final)|コンパイル不可|n/a|
 |gcc version 8.2.0 (Rev3, Built by MSYS2 project)|thread_local変数初回アクセス時|実行されない|
 
